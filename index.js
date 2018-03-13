@@ -2,7 +2,6 @@ var fs = require('fs');
 var path = require('path');
 var url = require('url');
 var sm = require('sitemap');
-var uj = require('url-join')
 
 var urls = [];
 
@@ -16,7 +15,7 @@ module.exports = {
             if (lang) lang = lang + '/';
 
             urls.push({
-                url: uj(this.config.get('pluginsConfig.sitemap.basePath'), this.output.toURL(lang + page.path))
+                url: this.config.get('pluginsConfig.sitemap-basepath') + this.output.toURL(lang + page.path)
             });
 
             return page;
@@ -26,7 +25,7 @@ module.exports = {
         "finish": function() {
             var sitemap = sm.createSitemap({
                 cacheTime: 600000,
-                hostname: url.resolve(this.config.get('pluginsConfig.sitemap.hostname'), '/'),
+                hostname: url.resolve(this.config.get('pluginsConfig.sitemap-basepath.hostname'), '/'),
                 urls: urls
             });
 
