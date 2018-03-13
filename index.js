@@ -15,7 +15,7 @@ module.exports = {
             if (lang) lang = lang + '/';
 
             urls.push({
-                url: this.config.get('pluginsConfig.sitemap-basepath') + this.output.toURL(lang + page.path)
+                url: this.config.get('pluginsConfig.sitemap-basepath.basePath') + this.output.toURL(lang + page.path)
             });
 
             return page;

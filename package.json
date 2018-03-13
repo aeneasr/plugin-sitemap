@@ -2,7 +2,7 @@
     "name": "gitbook-plugin-sitemap-basepath",
     "description": "Generate a sitemap for a GitBook",
     "main": "index.js",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "gitbook": ">=3.0.0-pre.0"
     },
