@@ -1,19 +1,22 @@
 {
-    "name": "gitbook-plugin-sitemap",
+    "name": "gitbook-plugin-sitemap-baseurl",
     "description": "Generate a sitemap for a GitBook",
     "main": "index.js",
-    "version": "1.2.0",
+    "version": "0.0.1",
     "engines": {
         "gitbook": ">=3.0.0-pre.0"
     },
     "homepage": "https://github.com/GitbookIO/plugin-sitemap",
-    "keywords": ["seo"],
+    "keywords": [
+        "seo"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/GitbookIO/plugin-sitemap.git"
     },
     "dependencies": {
-        "sitemap": "1.5.0"
+        "sitemap": "1.5.0",
+        "url-join": "^4.0.0"
     },
     "license": "Apache-2.0",
     "bugs": {
@@ -25,6 +28,11 @@
                 "type": "string",
                 "required": true,
                 "title": "Hostname for the book"
+            },
+            "basePath": {
+                "type": "string",
+                "required": false,
+                "title": "The book's base url"
             }
         }
     }

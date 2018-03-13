@@ -2,6 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var url = require('url');
 var sm = require('sitemap');
+var uj = require('url-join')
 
 var urls = [];
 
@@ -15,7 +16,7 @@ module.exports = {
             if (lang) lang = lang + '/';
 
             urls.push({
-                url: this.output.toURL(lang + page.path)
+                url: uj(this.config.get('pluginsConfig.sitemap.basePath'), this.output.toURL(lang + page.path))
             });
 
             return page;
